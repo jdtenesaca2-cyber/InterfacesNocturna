@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-title>UrbanShoes</ion-title>
+    <ion-buttons slot="end">
+      <ion-button fill="clear">
+        <ion-icon name="cart-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="overlay"></div>
+
+    <div class="hero-content">
+      <h1>Camina con Estilo</h1>
+      <p>Zapatos urbanos que marcan tendencia</p>
+      <ion-button shape="round" color="light" (click)="irATienda()">
+        Ver Tienda
+      </ion-button>
+    </div>
+  </section>
+
+  <!-- CATEGORÍAS -->
+  <section class="categorias">
+    <h2>Categorías</h2>
+
+    <div class="categorias-grid">
+      <div class="categoria-card" *ngFor="let categoria of categorias">
+        <img [src]="categoria.img" />
+        <div class="categoria-overlay">
+          <ion-icon [name]="categoria.icono"></ion-icon>
+          <span>{{ categoria.nombre }}</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DESTACADOS -->
+  <section class="destacados">
+    <h2>Destacados</h2>
+
+    <div class="productos-grid">
+      <ion-card class="producto-card" *ngFor="let producto of destacados">
+        <img [src]="producto.imagen" />
+        <ion-card-content>
+          <h3>{{ producto.nombre }}</h3>
+          <p class="precio">${{ producto.precio }}</p>
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </section>
+
+</ion-content>
